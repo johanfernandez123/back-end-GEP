@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import bcrypt from 'bcrypt'
 import generarId from "../helpers/generarId.js";
+
 const userSchema = mongoose.Schema({
+    
     nombre:{
         type: String,
         required: true

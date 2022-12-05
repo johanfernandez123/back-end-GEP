@@ -7,7 +7,8 @@ import {
     comprobarTokenPassword,
     restablecerPassword,
     perfil,
-    editarPerfil
+    editarPerfil,
+    actualizarPassword
 } from '../controllers/authController.js';
 import checkAuth from '../middleware/authMiddleware.js';
 
@@ -27,5 +28,7 @@ router
     .route('/perfil')
     .get(checkAuth, perfil)
     .put(checkAuth, editarPerfil)
+
+router.put('/modificar-password',checkAuth,actualizarPassword)
 
 export default router

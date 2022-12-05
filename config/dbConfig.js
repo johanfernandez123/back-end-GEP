@@ -14,4 +14,5 @@ const connectMongoose = async ()=>{
     }
 }
 
+
 export default connectMongoose

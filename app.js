@@ -1,10 +1,13 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import auth from './routers/authRouter.js'
 import connectMongoose from './config/dbConfig.js';
 import cors from 'cors'
-
+import auth from './routers/authRouter.js'
+import usuario from './routers/userRouter.js'
+import msg from './routers/msgRouter.js'
+import repartidor from './routers/repartidorRouter.js'
 // variables de entorno 
+
 dotenv.config();
 
 
@@ -25,12 +28,14 @@ const corsOptions = {
     }
 };
 
-app.use(cors(corsOptions))
-app.use(express.json())
-app.use('/api/auth',auth)
-// app.use('/api/usuario')
 
-// app.use('/api/repartidor')
+app.use(cors(corsOptions));
+
+app.use(express.json());
+app.use('/api/auth',auth);
+app.use('/api/usuario',usuario);
+app.use('/api/msg',msg)
+app.use('/api/repartidor',repartidor)
 // app.use('/api/administrador')
 
 
