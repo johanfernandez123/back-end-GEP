@@ -6,6 +6,7 @@ import auth from './routers/authRouter.js'
 import usuario from './routers/userRouter.js'
 import msg from './routers/msgRouter.js'
 import repartidor from './routers/repartidorRouter.js'
+import admin from './routers/adminRouter.js'
 // variables de entorno 
 
 dotenv.config();
@@ -36,7 +37,7 @@ app.use('/api/auth',auth);
 app.use('/api/usuario',usuario);
 app.use('/api/msg',msg)
 app.use('/api/repartidor',repartidor)
-// app.use('/api/administrador')
+app.use('/api/administrador',admin)
 
 
 const PORT = process.env.PORT || 4000

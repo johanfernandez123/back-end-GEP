@@ -4,6 +4,10 @@ import generarId from "../helpers/generarId.js";
 
 const userSchema = mongoose.Schema({
     
+    nit:{
+        type: String,
+        default: '',
+    },
     nombre:{
         type: String,
         required: true
@@ -24,6 +28,10 @@ const userSchema = mongoose.Schema({
     password:{
         type: String,
         required: true
+    },
+    celular:{
+        type:String,
+        default:''
     },
     rol:{
         type: Number,
